@@ -201,6 +201,15 @@ main.container a:hover {
   margin-bottom: 15px;
 }
 
+input[type="file"] {
+  display: inline-block;
+}
+
+a.navbar-text.navbar-right {
+  margin-right: 15px;
+  color: #333;
+}
+
 /* ----- Form ----- */
 
 .panel-form {
