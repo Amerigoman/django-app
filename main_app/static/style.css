@@ -9,8 +9,6 @@ h1 {
   color: #636968;
 }
 
-
-
 /* ----- Footer ----- */
 
 .footer {
@@ -197,4 +195,14 @@ input {
 
 main.container a:hover {
   text-decoration: none;
+}
+
+.row {
+  margin-bottom: 15px;
+}
+
+/* ----- Form ----- */
+
+.panel-form {
+  margin-top: 20px;
 }

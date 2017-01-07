@@ -12,7 +12,7 @@
                 </div>
                 <div class="panel-body">
                     <div class="tracker-photo">
-                        <img src="{{ location.img_url }}" alt="" height="300" />
+                        <img src="{{ location.img.url }}" alt="" height="300" />
                     </div>
                 </div>
             </div>
@@ -22,5 +22,15 @@
     </div><div class="row">
     {% endif %}
     {% endfor %}
+</div>
+<div class="tracker panel panel-default panel-form">
+    <div class="panel-heading">
+        <h2 class="panel-title">Add Location</h2>
+    </div>
+    <form enctype="multipart/form-data" action="post_location/" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="btn btn-primary" type="submit" value="Submit" />
+    </form>
 </div>
 {% endblock %}
