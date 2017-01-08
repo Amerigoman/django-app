@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from .models import Location
 from .forms import LocationForm, LoginForm
 from django.contrib.auth.models import User
@@ -76,3 +76,22 @@ def register(request):
     else:
         form = UserCreationForm()
         return render(request, 'registration.html', {'form': form})
+
+
+def search(request):
+    search_val = request.GET.get('search', None)
+
+    if search_val is not None:
+        results = []
+        locations = Location.objects.filter(name__icontains=search_val)
+        print locations
+        for location in locations:
+            json = {
+                'name': location.name,
+                'link': '/' + str(location.id) + '/'
+            }
+
+            results.append(json)
+        return JsonResponse({'results': results})
+    else:
+        return render(request, 'search.html')

@@ -47,7 +47,7 @@ input {
 /* ----- Hero ----- */
 
 .hero-image-container {
-  background: url("images/traveltracker-header-bg.jpg") #545a58 no-repeat center center;
+  background: url("../images/traveltracker-header-bg.jpg") #545a58 no-repeat center center;
   border-color: #a8aaa9;
   margin-bottom: 30px;
   padding: 20px 0;
@@ -93,7 +93,7 @@ input {
 }
 
 .navbar-default {
-  background: url("images/traveltracker-header-bg.jpg") #abafae no-repeat center center;
+  background: url("../images/traveltracker-header-bg.jpg") #abafae no-repeat center center;
   border-color: #a8aaa9;
 }
 
