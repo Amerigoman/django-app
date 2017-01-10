@@ -1,10 +1,10 @@
-$('#search-form').on('submit', function(event){
+$('#search-text').on('keyup ', function(event){
     event.preventDefault();
 
     $.ajax({
         url : '/search/',
         method : 'GET',
-        data : { search : $('#search-text').val() },
+        data : { search : $(this).val() },
 
         success : function(json){
             var element = $('#result-list');

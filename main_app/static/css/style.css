@@ -215,3 +215,7 @@ a.navbar-text.navbar-right {
 .panel-form {
   margin-top: 20px;
 }
+
+.helptext {
+  display: none;
+}

@@ -1,0 +1,1 @@
+web: sh -c "cd Treasuregram && gunicorn Treasuregram.wsgi"

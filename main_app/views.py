@@ -31,10 +31,13 @@ def post_location(request):
 
 
 def profile(request, username):
-    user = User.objects.get(username=username)
-    locations = Location.objects.filter(user=user)
-    return render(request, 'profile.html', {'username': username,
-                                            'locations': locations})
+    if request.user.is_authenticated():
+        user = User.objects.get(username=username)
+        if user.username == request.user.username:
+            locations = Location.objects.filter(user=user)
+            return render(request, 'profile.html', {'username': username,
+                                                    'locations': locations})
+    return HttpResponseRedirect('/')
 
 
 def login_view(request):
@@ -84,7 +87,6 @@ def search(request):
     if search_val is not None:
         results = []
         locations = Location.objects.filter(name__icontains=search_val)
-        print locations
         for location in locations:
             json = {
                 'name': location.name,
